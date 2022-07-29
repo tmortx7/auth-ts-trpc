@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import { SessionProvider } from "next-auth/react";
 import { withTRPC } from "@trpc/next";
 
-import { ServerRouter } from "../server/router";
+import { AppRouter } from "../server/route/app.router";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -13,7 +13,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   );
 };
 
-export default withTRPC<ServerRouter>({
+export default withTRPC<AppRouter>({
   config({ ctx }) {
     const url = process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}/api/trpc`

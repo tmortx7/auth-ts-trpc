@@ -1,10 +1,10 @@
 import * as trpc from "@trpc/server";
 import { hash } from "argon2";
 
-import { Context } from "./context";
-import { signUpSchema } from "../common/validation/auth";
+import { signUpSchema } from "../../common/validation/auth";
+import { createRouter } from "../createRouter";
 
-export const serverRouter = trpc.router<Context>()
+export const userRouter = createRouter()
   .mutation("signup", {
     input: signUpSchema,
     resolve: async ({ input, ctx }) => {
@@ -35,4 +35,3 @@ export const serverRouter = trpc.router<Context>()
   },
 });
 
-export type ServerRouter = typeof serverRouter;

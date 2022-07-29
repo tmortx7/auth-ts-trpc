@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { signUpSchema, ISignUp } from "../common/validation/auth";
-import { trpc } from "../common/client/trpc";
+import { trpc } from "../utils/trpc";
 
 const SignUp: NextPage = () => {
   const router = useRouter();
@@ -15,7 +15,7 @@ const SignUp: NextPage = () => {
     resolver: zodResolver(signUpSchema),
   });
 
-  const { mutateAsync } = trpc.useMutation(["signup"]);
+  const { mutateAsync } = trpc.useMutation(["users.signup"]);
 
   const onSubmit = useCallback(
     async (data: ISignUp) => {
