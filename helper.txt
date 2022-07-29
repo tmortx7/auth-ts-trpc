@@ -8,3 +8,5 @@ npm install prisma
 npx prisma init
 
 npx prisma migrate dev --name init
+
+yarn add @trpc/client @trpc/server @trpc/react @trpc/next zod react-query@3.39.1
