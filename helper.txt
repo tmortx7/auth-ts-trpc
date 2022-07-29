@@ -3,3 +3,8 @@ yarn add -D tailwindcss postcss autoprefixer
 yarn add daisyui
 
 npx tailwindcss init -p
+
+npm install prisma
+npx prisma init
+
+npx prisma migrate dev --name init
