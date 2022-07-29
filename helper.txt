@@ -1,0 +1,5 @@
+npx create-next-app@latest --ts auth-project
+yarn add -D tailwindcss postcss autoprefixer
+yarn add daisyui
+
+npx tailwindcss init -p
